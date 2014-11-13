@@ -53,7 +53,10 @@
 		<input id="max-chr" type='number' ng-model='characters'>
 	</header>
 	<div id="container">
-		<textarea id="essay" maxlength="{{characters}}" ng-model="essay"></textarea>
+		<textarea id="essay" 
+							spellcheck='false'
+							maxlength="{{characters}}" 
+							ng-model="essay"></textarea>
 
 		<div id='count'>
 			{{essay.length || 0}}/{{characters || 0}}
