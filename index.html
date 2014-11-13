@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Rosario' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+
+  	* { 
+			background-color: #E3E3ED;
+			font-family: 'Amaranth', sans-serif;
+
+  	}
+  	header {
+  		font-size: 2em;
+  		padding: 1em;
+  		text-align: center;
+  	}
+
+  	#max-chr {
+  		font-size: 0.8em;
+  		width: 3em;
+  	}
+
+  	#essay {
+  		margin-left: 2em;
+  		background-color: white;
+  		font-size: 1.25em;
+  		max-width: 80%;
+  		width: 40em;
+  		height: 28em;
+  		border: 3px solid #cccccc;
+			padding: 5px;
+			font-family: 'Rosario', sans-serif;
+
+  	}
+
+  	#count {
+  		float: right;
+  		font-size: 2em;
+  		padding-top: 2em;
+  		padding-right: 2em;
+  	}
+  </style>
+
+	<title>Text Limit</title>
+</head>
+
+<body ng-app ng-init="characters=4600">
+	<header>
+		How many characters would you like to limit yourself to? 
+		<input id="max-chr" type='number' ng-model='characters'>
+	</header>
+	<div id="container">
+		<textarea id="essay" 
+							spellcheck='false'
+							maxlength="{{characters}}" 
+							ng-model="essay"></textarea>
+
+		<div id='count'>
+			{{essay.length || 0}}/{{characters || 0}}
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
